@@ -10,6 +10,11 @@
          &:hover .steps__item {
         opacity: 0.4; 
         transition: opacity 0.3s ease;
+       
+    }
+     @media screen and (max-width: 480px) {
+      padding-top: 24px;
+      gap: 22px;
     }
     }
    &__item {
@@ -23,6 +28,10 @@
   padding: 32px 0;
   transition: opacity 0.3s ease;
   cursor: pointer;
+   @media screen and (max-width: 480px) {
+      padding: 16px 0 0 0;
+      justify-content: flex-start;
+    }
 
   &::before {
     content: counter(item) ".";
@@ -33,6 +42,9 @@
     font-weight: 500;
     font-family: "Exo 2", sans-serif;
     color: #27EC98;
+     @media screen and (max-width: 480px) {
+      top: 12px;
+    }
   }
 
   &::after {
@@ -73,6 +85,9 @@
         font-weight: 500;
         font-family: "Exo 2", sans-serif;
         display: inline;
+         @media screen and (max-width: 480px) {
+      font-size: 16px;
+    }
     }
    
 }

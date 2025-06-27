@@ -26,9 +26,10 @@ function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__text">
-            This site helps you learn more about trading and our privacy policy.
+            The site you use will help you learn more about the weather and privacy policy.
+ 
           </p>
-          <p className="footer__text">© 2025 Fuex.io.</p>
+          <p className="footer__text">&copy; 2025 Fuex.io.</p>
         </div>
       </div>
     </footer>

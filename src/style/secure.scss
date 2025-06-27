@@ -1,9 +1,13 @@
 .secure{
-
+    
+    position: relative;
     &__section{
         display: flex;
         align-items: center;
         justify-content: space-between;
+         @media screen and (max-width: 480px){
+            flex-direction: column;
+         }
        &::before {
     content: "";
     position: absolute;
@@ -15,11 +19,15 @@
 
     background-image: url('../assets/secure.png');
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: contain; 
     background-position: center;
+    @media screen and (max-width: 480px){
+        width: 365px;
 
-    z-index: 0;
-    opacity: 1; 
+        height: 83px;
+        top: 0;
+        left:0;
+    }
   }
   z-index: 1;
     }
@@ -32,6 +40,9 @@
         font-family: "Exo 2", sans-serif;
         line-height: 114%;
         padding-bottom: 24px;
+         @media screen and (max-width: 480px){
+            font-size: 24px;
+         }
     }
     &__content{
         max-width: 635px;
@@ -48,5 +59,8 @@
         &:not(:last-child){
             padding-bottom: 16px;
         }
+         @media screen and (max-width: 480px){
+            font-size: 14px;
+         }
     }
 }

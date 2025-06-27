@@ -1,61 +1,103 @@
-.portfolio{
-
-    &__tabs{
-        display: flex;
-        justify-content: center;
-        padding-top: 40px;
+.portfolio {
+  &__container {
+    @media screen and (max-width: 480px) {
+      padding: 0;
     }
-    &__tab-button{
-        position: relative;
-        color: #A9ACAC;
-        padding: 17px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        font-weight: 500;
-        font-family: "Exo 2", sans-serif;
-        font-size: 16px;
-        svg{
-            fill: #A9ACAC;
-        }
-        &.btn-active {
-            color: #27EC98;
-            border-bottom: 2px solid #27EC98;
-            svg{
-                fill: #27EC98;
-            }
-
-        }
+  }
+  &__title {
+    @media screen and (max-width: 480px) {
+      padding: 0 16px;
     }
-    &__icon{
-        margin-left: 32px;
+  }
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    @media screen and (max-width: 480px) {
+      padding-top: 0;
+      overflow-x: auto;
+      justify-content: flex-start;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 24px 16px 0 16px;
     }
-    &__tab-content{
+  }
+  &__tab-button {
+    position: relative;
+    color: #a9acac;
+    padding: 17px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    flex-shrink: 0;
+    @media screen and (max-width: 480px) {
+      padding: 15px 14px;
+    }
+    svg {
+      fill: #a9acac;
+    }
+    &.btn-active {
+      color: #27ec98;
+      border-bottom: 2px solid #27ec98;
+      svg {
+        fill: #27ec98;
+      }
+    }
+  }
+  &__icon {
+    margin-left: 32px;
+    @media screen and (max-width: 480px) {
+      margin-left: 14px;
+    }
+  }
+  &__tab-content {
     text-align: center;
     font-size: 15px;
-    color: #ccc;
+    color: #a9acac;
     padding-top: 32px;
+    @media screen and (max-width: 480px) {
+      padding-top: 17px;
     }
-    &__btn{
-        display: flex;
-        margin: 57px auto 0 auto;
+  }
+  &__btn {
+    display: flex;
+    margin: 57px auto 0 auto;
+    @media screen and (max-width: 480px) {
+      margin: 24px auto 0 auto;
     }
+  }
 }
-
-
 
 .crypto-ticker {
   overflow: hidden;
   .ticker-row {
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+    @media screen and (max-width: 480px) {
+      mask-image: none;
+      overflow-x: auto;
+      max-width: 100vw;
+    }
     .ticker-track {
       display: flex;
-      width: max-content;
+      width: 100%;
       animation: scroll-left 45s linear infinite;
+      @media screen and (max-width: 480px) {
+         display: flex;
+  width: fit-content;
+      }
     }
 
     &.right .ticker-track {
@@ -73,31 +115,34 @@
     min-width: 300px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     gap: 12px;
-    &__wrap{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+    @media screen and (max-width: 480px){
+      padding: 14px 0;
+      align-items: start;
+      flex: 0 0 230px; 
+  max-width: 100vw;
+     }
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
-    &__prices{
-        display: flex;
-        gap: 12px;
+    &__prices {
+      display: flex;
+      gap: 12px;
     }
     .name {
       align-items: start;
       text-align: left;
       font-weight: 500;
-        font-family: "Exo 2", sans-serif;
-        font-size: 16px;
+      font-family: "Exo 2", sans-serif;
+      font-size: 16px;
     }
 
     .price {
-    
       color: #aaa;
     }
 
     .change {
-    
-
       &.positive {
         color: #00ff91;
       }

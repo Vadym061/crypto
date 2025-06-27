@@ -1,5 +1,13 @@
-.accordion {    
-
+.accordion {  
+    
+  h2{
+     @media screen and (max-width: 480px){
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     }
+  }
     &__subtitle{
         color: #A9ACAC;
         text-align: center;
@@ -7,6 +15,9 @@
         width: 100%;
         margin: 0 auto;
         padding: 24px 0 0 0;
+         @media screen and (max-width: 480px){
+          font-size: 14px;
+     }
     }
     &__block{
         overflow: hidden;
@@ -15,6 +26,9 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+         @media screen and (max-width: 480px){
+        margin: 32px auto 0 auto;
+     }
     }
 
 
@@ -49,7 +63,9 @@
        font-weight: 500;
         font-family: "Exo 2", sans-serif;
         font-size: 24px;
-       
+        @media screen and (max-width: 480px){
+     font-size: 16px;
+     }
 
       .arrow {
         transition: transform 0.3s ease;
@@ -62,6 +78,9 @@
       transition: max-height 0.8s ease;
         max-width: 580px;
         width: 100%;
+        @media screen and (max-width: 480px){
+     font-size: 14px;
+     }
 
       .accordion-content {
         padding: 0 0 24px 0;

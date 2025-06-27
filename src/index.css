@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
-  background-color: #000000;
+  background-color: #101212;
   color: #fff;
 }
 
@@ -54,7 +54,7 @@ select {
   max-width: 1584px;
   margin-inline: auto;
   padding-inline: clamp(10px, 5vw, 20px);
-  
+
 }
 #root{
   position: relative;
@@ -68,6 +68,7 @@ select {
   flex: 1;
   display: flex;
   flex-direction: column;
+
 }
 .wrap{
   padding: 80px 0;
@@ -105,8 +106,10 @@ body {
 }
 
 .button-1 {
+  
   position: relative;
   display: inline-block;
+  text-align: center;
   padding: 12px 24px;
   border-radius: 100px;
   font-weight: 500;
@@ -125,6 +128,7 @@ body {
     );
   background-origin: border-box;
   background-clip: padding-box, border-box;
+  
 }
 .button-2 {
   position: relative;
@@ -136,6 +140,7 @@ body {
   font-size: 16px;
   color: #fff;
   border: 1px solid transparent;
+  text-align: center;
 
   background-image:  
    radial-gradient(40.65% 118.75% at 50% 100%, rgba(129, 234, 189, 0.55) 0%, rgba(129, 234, 189, 0) 100%),
@@ -148,6 +153,7 @@ body {
  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.72) inset;
   z-index: 1;
   overflow: hidden;
+  
 }
 
 .button-2::before {
@@ -169,5 +175,41 @@ body {
   color: #fff;
   background-color: #049658;
   border-radius: 100px;
-  padding: 5px 16px;
+  padding:10px 16px;
+}
+.btn-icon{
+  display: flex;
+  order: 1;
+  transform: rotate(180deg);
+  align-items: center;
+  justify-content: center;
+}
+
+ @media screen and (max-width: 480px){
+    .button-1,
+    .button-2{
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    .main{
+      padding-inline: 0;
+    }
+    .heading.h1{
+      font-size: 30px;
+    }
+    .wrap{
+      padding: 40px 0;
+    }
+    .heading.h2 {
+      font-size: 24px;
+      text-align: start;
+    }
+    .heading.h5{
+      font-size: 18px;
+    }
+   }
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }

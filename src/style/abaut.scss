@@ -5,6 +5,9 @@
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         padding-top: 40px;
         gap: 16px;
+        @media screen  and (max-width: 480px){
+          padding-top: 24px;
+        }
     }
     &__item{
         position: relative;
@@ -75,10 +78,17 @@
     }
     &__card-content{
         padding: 32px;
+         @media screen  and (max-width: 480px){
+         padding: 18px; 
+        }
     }
     &__description{
         color: #A9ACAC;
         padding: 16px 0 28px 0;
+         @media screen  and (max-width: 480px){
+          padding: 16px 0 18px 0;
+          font-size: 14px;
+        }
     }
     &__card-btns{
         display: flex;

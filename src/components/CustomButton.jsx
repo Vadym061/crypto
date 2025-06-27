@@ -1,19 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CustomButton({ text, onClick, to, className, type = "button", children }) {
+  const content = (
+    <>
+      {children && <span className="btn-icon">{children}</span>}
+      <span>{text}</span>
+    </>
+  );
+
   if (to) {
     return (
-      <a href={to} className={className}>
-        {children && <span className="btn-icon">{children}</span>}
-        <span>{text}</span>
-      </a>
+      <Link to={to} className={className}>
+        {content}
+      </Link>
     );
   }
 
   return (
     <button type={type} onClick={onClick} className={className}>
-      {children && <span className="btn-icon">{children}</span>}
-      <span>{text}</span>
+      {content}
     </button>
   );
 }

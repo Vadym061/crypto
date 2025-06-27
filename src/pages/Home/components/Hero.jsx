@@ -11,7 +11,7 @@ function Hero() {
         <div className='container hero__wrapper'>
             <article className='hero__content'>
              
-               <span className='tag'>&#35;&nbsp;no&nbsp;noice</span>
+               <span className='tag'>&#35;&nbsp;no&nbsp;noise</span>
               <h1 className='hero__title heading h1'>The most convenient exchange for spot trading</h1>
               <p className='hero__description'>Fuex.io is a minimalist exchange with a commission of only 0.001%. Both futures and spot trading. Clearly, carelessly, simply.</p>
      

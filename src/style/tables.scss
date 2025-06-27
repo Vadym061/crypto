@@ -2,17 +2,28 @@
 
   &__scroll{
     display: flex;
-    gap: 13px;
     overflow-x: auto;
     width: 100%;
     padding: 35px 0 10px 0;
+    
+    @media screen and (max-width: 480px){
+    padding: 14px 0 10px 0;
+    flex-direction: column;
+    
+    }
+  }
+  &__section{
+    display: flex;
+    gap: 13px;
+    @media screen and (max-width: 480px){
+      flex-direction: column;
+    }
   }
   &__thead{
  background-color: #16a34a;
 }
   &__table{
-    min-width: 920px;
-    width: 100%;
+   min-width: 920px;
     max-width: 1024px;
     flex-shrink: 0;
     border-collapse: collapse;
@@ -22,30 +33,59 @@
     min-width: 504px;
     flex-shrink: 0;
     border-collapse: collapse;
+    @media screen and (max-width: 480px){
+       min-width: 340px;
+    }
   }
   &__thead{
     font-weight: 500;
     font-family: "Exo 2", sans-serif;
     font-size: 16px;
+    @media screen and (max-width: 480px){
+    font-size: 14px;
+    }
   }
   &__icon{
     display: flex;
     object-fit: cover;
     width: 50px;
     height: 50px;
+    @media screen and (max-width: 480px){
+    width: 30px;
+    height: 30px;
+    }
   }
   &__column{
     display: flex;
     gap: 12px;
     padding: 16px 0 16px 32px;
+    @media screen and (max-width: 480px){
+    padding: 12px 0 12px 14px;
+    align-items: center;
+    }
+    
+  }
+  &__show{
+@media screen and (max-width: 480px) {
+      
+        display: none;
+  
+    }
   }
   &__row{
     border-bottom: 1px solid #333;
+    
   }
   &__coin{
     display: flex;
     max-width: 160px;
+    width: 100%;
     margin: 28px 16px 28px 32px;
+    @media screen and (max-width: 480px){
+    margin: 12px 8px 12px 14px;
+    max-width: 180px;
+    width: 100%;
+    }
   }
   &__full{
     color: #A9ACAC;
@@ -53,6 +93,12 @@
   }
   &__tabs{
     border: 2px solid rgba(255, 255, 255, 0.1);
+     margin: 35px 0 10px 0;
+    @media screen and (max-width: 480px){
+    margin: 24px 0 10px 0;
+    flex-direction: column;
+    
+    }
   }
   &__change{
     &--positive{
@@ -90,6 +136,9 @@
     svg{
         fill: #A9ACAC;
     }
+    @media screen and (max-width: 480px) {
+       padding: 16px 10px;
+    }
 }
 }
 tr {
@@ -109,4 +158,36 @@ tr {
 .section-title{
     display: flex;
     text-align: left;
+}
+
+.search--mobile {
+  display: none;
+
+  @media screen and (max-width: 480px) {
+    display: block;
+    margin-top: 24px;
+
+    .search-input-wrapper {
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 13px 10px 13px 40px; 
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background-color: #1a1a1a;
+        color: #fff;
+        font-size: 14px;
+      }
+
+    
+
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 19px;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
+  }
 }

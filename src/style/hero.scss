@@ -1,75 +1,96 @@
-.hero{
-    
-    &__wrapper{
-         position: relative;
-         display: flex;
-         align-items: start;
-         padding-top: 120px ;
-         height: 100%;
-        justify-content: space-between;
-        gap: 10px;
-         &::before {
-    content: "";
-    position: absolute;
-    top: 10%;
-    left:7%;
-    max-width: 920px;
-    width: 100%;
-    height: 205px;
-
-    background-image: url('../assets/crypto.png');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
-
-    z-index: 0;
-    opacity: 1; 
+.hero {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: start;
+    padding-top: 120px;
+    height: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    height: calc(100vh - 92px);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 7%;
+      max-width: 920px;
+      width: 100%;
+      height: 205px;
+      background-image: url("../assets/crypto.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      @media screen and (max-width: 480px) {
+        height: 66px;
+        width: 280px;
+        top: 8%;
+        left: 25%;
+      }
+    }
+    @media screen and (max-width: 480px){
+      padding-top: 40px;
+      flex-direction: column;
+      height: auto;
+    }
   }
-    }
-    &__content{
-        max-width: 635px;
-        height: 440px;
-        width: 100%;
-    }
-    &__btn{
-        padding-top: 32px;
-    }   
-    &__image{
-        width: 100%;
-        height: auto;
-        max-width: 705px;
-        object-fit: cover;
-    }
-    &__description{
-        max-width: 505px;
-        width: 100%;
-    }
-    
+  &__content {
+    max-width: 635px;
+    height: 440px;
+    width: 100%;
+      @media screen and (max-width: 480px){
+      height: auto;
+      padding-bottom: 24px;
+     }
+  }
+  &__btn {
+    padding-top: 32px;
+     @media screen and (max-width: 480px){
+      padding-top: 24px;
+     }
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+    max-width: 705px;
+    object-fit: cover;
+  }
+  &__description {
+    max-width: 505px;
+    width: 100%;
+  }
 }
 
-.svg-bg{
-    position: absolute;
+.svg-bg {
+  position: absolute;
   max-width: 1600px;
-  height: 1010px;
+  height: auto;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 0;
+   @media screen and (max-width: 480px){
+    max-width: 535px;
+    height: 535px;
+    top: 1%;
+   }
 }
-.svg-bg svg {
+.svg-bg img {
   width: 100%;
   height: auto;
 }
-.svg-bg2{
-    position: absolute;
+.svg-bg2 {
+  position: absolute;
   max-width: 505px;
   width: 100%;
-  height: 800px;
+  height: auto;
   top: 3%;
   right: 0;
   z-index: 0;
+   @media screen and (max-width: 480px){
+    top: 5%;
+   }
 }
-.svg-bg2 svg {
+.svg-bg2 img {
   width: 100%;
   height: auto;
   max-width: 640px;
