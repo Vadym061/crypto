@@ -1,0 +1,91 @@
+.about{
+   
+    &__card{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        padding-top: 40px;
+        gap: 16px;
+    }
+    &__item{
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        
+        &::before,
+  &::after,
+  .corner-top-right,
+  .corner-bottom-left {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #27EC98;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+
+  .corner-top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .corner-bottom-left {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+    
+  }
+
+  &:hover::before,
+  &:hover::after,
+  &:hover .corner-top-right,
+  &:hover .corner-bottom-left {
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+    }
+    &__img{
+       object-fit: cover;
+        width: 100%;
+        max-width: 504px;
+        height: auto;
+    }
+    &__card-content{
+        padding: 32px;
+    }
+    &__description{
+        color: #A9ACAC;
+        padding: 16px 0 28px 0;
+    }
+    &__card-btns{
+        display: flex;
+        gap: 8px;
+    }
+}
+
+
+
+

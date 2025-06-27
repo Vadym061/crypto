@@ -1,0 +1,35 @@
+.trade-easy-block{
+   
+    &__subtitle{
+        color: #A9ACAC;
+        text-align: center;
+    }
+    &__content{
+        max-width: 725px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__section{
+        background-image: url('../assets/decorbg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        background-color: #161818;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        padding: 80px 0;
+    }
+    &__button{
+        max-width: 240px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

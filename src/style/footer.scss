@@ -1,0 +1,42 @@
+.footer{
+    padding-inline: clamp(10px, 5vw, 80px);
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+     background-image: url("../assets/stars.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        padding: 55px 0;
+    }
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 16px;
+        color: #A9ACAC;
+    }
+    &__contact{
+        max-width: 635px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__contact-block{
+        display: flex;
+        gap: 24px;
+        flex-direction: column;
+    }
+    &__label{
+        color: #A9ACAC;
+        font-weight: 500;
+        font-family: "Exo 2", sans-serif;
+        font-size: 16px;
+    }
+    &__link{
+        font-weight: 500;
+        font-family: "Exo 2", sans-serif;
+        font-size: 24px;
+    }
+}

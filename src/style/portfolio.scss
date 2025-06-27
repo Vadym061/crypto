@@ -1,0 +1,128 @@
+.portfolio{
+
+    &__tabs{
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+    &__tab-button{
+        position: relative;
+        color: #A9ACAC;
+        padding: 17px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 500;
+        font-family: "Exo 2", sans-serif;
+        font-size: 16px;
+        svg{
+            fill: #A9ACAC;
+        }
+        &.btn-active {
+            color: #27EC98;
+            border-bottom: 2px solid #27EC98;
+            svg{
+                fill: #27EC98;
+            }
+
+        }
+    }
+    &__icon{
+        margin-left: 32px;
+    }
+    &__tab-content{
+    text-align: center;
+    font-size: 15px;
+    color: #ccc;
+    padding-top: 32px;
+    }
+    &__btn{
+        display: flex;
+        margin: 57px auto 0 auto;
+    }
+}
+
+
+
+.crypto-ticker {
+  overflow: hidden;
+  .ticker-row {
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 45s linear infinite;
+    }
+
+    &.right .ticker-track {
+      animation-name: scroll-right;
+    }
+  }
+
+  .ticker-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    color: #fff;
+    white-space: nowrap;
+    background-color: #161818;
+    min-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 12px;
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__prices{
+        display: flex;
+        gap: 12px;
+    }
+    .name {
+      align-items: start;
+      text-align: left;
+      font-weight: 500;
+        font-family: "Exo 2", sans-serif;
+        font-size: 16px;
+    }
+
+    .price {
+    
+      color: #aaa;
+    }
+
+    .change {
+    
+
+      &.positive {
+        color: #00ff91;
+      }
+
+      &.negative {
+        color: #ff4e4e;
+      }
+    }
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

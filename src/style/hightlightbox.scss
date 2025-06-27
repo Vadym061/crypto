@@ -1,0 +1,32 @@
+.hightlightbox{
+   @media screen and (min-width: 480px) {
+ position: relative;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    background-image: url('../assets/stars.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 80px;
+        left: -2px; 
+        width: 2px;
+        height: 60px; 
+        background: #27EC98; 
+        z-index: 2;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 80px;
+        right: -2px; 
+        width: 2px;
+        height: 60px; 
+        background: #27EC98; 
+        z-index: 2;
+    }
+   }
+    
+}

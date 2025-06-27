@@ -1,13 +1,173 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  height: 100%;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1584px;
+  margin-inline: auto;
+  padding-inline: clamp(10px, 5vw, 20px);
+  
+}
+#root{
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  position: relative;
+  padding-inline: clamp(10px, 5vw, 80px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.wrap{
+  padding: 80px 0;
+}
+.heading.h1 {
+  font-size: 66px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  line-height: 112%;
+  padding: 24px 0;
+}
+.heading.h2 {
+  font-size: 54px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  text-align: center;
+}
+.heading.h3 {
+  font-size: 44px;
+}
+.heading.h4 {
+  font-size: 34px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+}
+.heading.h5 {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+}
+body {
+  font-size: 16px;
+  font-family: "Nato Sans", sans-serif;
+  font-weight: 400;
+}
+
+.button-1 {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  z-index: 1;
+  background: #232727;
+  border: 1px solid transparent;
+  background-image: linear-gradient(#232727, #232727),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.button-2 {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid transparent;
+
+  background-image:  
+   radial-gradient(40.65% 118.75% at 50% 100%, rgba(129, 234, 189, 0.55) 0%, rgba(129, 234, 189, 0) 100%),
+    radial-gradient(27.75% 31.25% at 50% 100%, rgba(129, 234, 189, 0.68) 0%, rgba(129, 234, 189, 0) 100%),
+    linear-gradient(#049658, #049658),
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+ box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.72) inset;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.button-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='15' specularConstant='0.9' specularExponent='20' lighting-color='%23ffffff' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='113'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='transparent'%3E%3C/rect%3E%3Crect width='700' height='700' fill='%23ffffff' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E");
+  background-size: cover;
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tag{
+  font-size: 14px;
+  font-family: "Nato Sans", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background-color: #049658;
+  border-radius: 100px;
+  padding: 5px 16px;
 }
