@@ -41,7 +41,7 @@ function Navigation() {
                 isDropdownOpen ? "active-submenu" : ""
               }`}
             >
-              <Link to="/account/information" className="menu__submenu-item">
+              <Link to="/account" className="menu__submenu-item">
                 Account information
               </Link>
               <Link to="/account/wallet" className="menu__submenu-item">

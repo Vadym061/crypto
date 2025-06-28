@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Account from '../pages/account/Account';
 
 import HomePage from "../pages/Home/components/HomePage";
 
@@ -12,6 +13,7 @@ function MainLayouts() {
       <main className="main">
          <Routes>
           <Route path="/" element={<HomePage />} />
+           <Route path='/account' element={<Account />} />
         </Routes>
       </main>
       <Footer />

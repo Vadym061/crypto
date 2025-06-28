@@ -7,6 +7,7 @@ import Login from './pages/Home/components/Login';
 
 
 
+
 function App() {
   return (
   
@@ -17,7 +18,8 @@ function App() {
 
         <Route path="/registration" element={<Registration />} />
         
-         <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+       
       </Routes>
       </AuthProvider>
 
