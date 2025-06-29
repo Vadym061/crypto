@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-function Navigation() {
+function Navigation({ closeMenu }) {
   const { isLoggedIn } = useContext(AuthContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -10,7 +10,7 @@ function Navigation() {
 
   return (
     <nav className="menu">
-      <Link to="/spot-trading" className="menu__item">
+      <Link to="/spot-trading" className="menu__item" onClick={closeMenu}>
         Spot Trading
       </Link>
 
@@ -41,10 +41,10 @@ function Navigation() {
                 isDropdownOpen ? "active-submenu" : ""
               }`}
             >
-              <Link to="/account" className="menu__submenu-item">
+              <Link to="/account" className="menu__submenu-item" onClick={closeMenu}>
                 Account information
               </Link>
-              <Link to="/account/wallet" className="menu__submenu-item">
+              <Link to="/account/wallet" className="menu__submenu-item" onClick={closeMenu}>
                 Wallet
               </Link>
             </div>

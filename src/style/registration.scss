@@ -1,116 +1,126 @@
-.registration{
-    position: relative;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-    border-right: 2px solid rgba(255, 255, 255, 0.1);
-    background-image: url('../assets/stars.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    &::after {
-        content: '';
-        position: absolute;
-        top: 80px;
-        left: -2px; 
-        width: 2px;
-        height: 60px; 
-        background: #27EC98; 
-        z-index: 2;
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: 80px;
-        right: -2px; 
-        width: 2px;
-        height: 60px; 
-        background: #27EC98; 
-        z-index: 2;
-    }
-    &__container{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        &::after{
-              content: "";
-                height: 200px;
-                width: 100%;
-                position: absolute;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-                 background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                z-index: 0;
-                background-image: url("../assets/registration.png");
-        }
-    }
-     &__form {
-        position: relative;
-        max-width: 510px;
-        width: 100%;
-        padding: 32px;
-        background-color: #161818;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        z-index: 2;
-              &::before,
-  &::after,
-  .corner-top-right,
-  .corner-bottom-left {
-    content: '';
+.registration {
+  position: relative;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  background-image: url("../assets/stars.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  &::after {
+    content: "";
     position: absolute;
-    width: 24px;
-    height: 24px;
-    border: 2px solid #27EC98;
-    
+    top: 80px;
+    left: -2px;
+    width: 2px;
+    height: 60px;
+    background: #27ec98;
+    z-index: 2;
   }
   &::before {
-    top: 0;
-    left: 0;
-    border-right: none;
-    border-bottom: none;
+    content: "";
+    position: absolute;
+    bottom: 80px;
+    right: -2px;
+    width: 2px;
+    height: 60px;
+    background: #27ec98;
+    z-index: 2;
   }
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    &::after {
+      content: "";
+      height: 200px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      background-image: url("../assets/registration.png");
+       @media screen and (max-width: 480px) {
+       height: 45px;
+      width: 100%;
+      top:90%;
+      left: 0;
+    }
+    }
+  }
+  &__form {
+    position: relative;
+    max-width: 510px;
+    width: 100%;
+    padding: 32px;
+    background-color: #161818;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    @media screen and (max-width: 480px) {
+      padding: 32px 16px;
+    }
+    &::before,
+    &::after,
+    .corner-top-right,
+    .corner-bottom-left {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #27ec98;
+    }
+    &::before {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none;
+    }
 
-  &::after {
-    bottom: 0;
-    right: 0;
-    border-left: none;
-    border-top: none;
-  }
+    &::after {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none;
+    }
 
-  .corner-top-right {
-    top: 0;
-    right: 0;
-    border-left: none;
-    border-bottom: none;
-  }
+    .corner-top-right {
+      top: -2px;
+      right: -2px;
+      border-left: none;
+      border-bottom: none;
+    }
 
-  .corner-bottom-left {
-    bottom: 0;
-    left: 0;
-    border-top: none;
-    border-right: none;
-    
+    .corner-bottom-left {
+      bottom:-2px;
+      left: -2px;
+      border-top: none;
+      border-right: none;
+    }
   }
-  }
- 
 
   &__title {
     font-weight: 500;
     font-family: "Exo 2", sans-serif;
     text-align: center;
     white-space: nowrap;
+    
   }
 
   &__subtitle {
     font-size: 16px;
-    color: #A9ACAC;
+    color: #a9acac;
     text-align: center;
     margin: 16px 0 8px 0;
-    
+     @media screen and (max-width: 480px) {
+      font-size: 14px;
+      margin: 10px 0;
+    }
   }
 
   &__input {
@@ -123,21 +133,24 @@
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     &::placeholder {
-    color: #A9ACAC;
-    font-size: 16px;
-    font-family: "Nato Sans", sans-serif;
-    font-weight: 400;
+      color: #a9acac;
+      font-size: 16px;
+      font-family: "Nato Sans", sans-serif;
+      font-weight: 400;
     }
-     &:focus {
-    border-bottom: 2px solid #27EC98;
-    outline: none; 
+    &:focus {
+      border-bottom: 2px solid #27ec98;
+      outline: none;
+    }
+    &--error {
+      border-bottom: 2px solid #ed3c56;
+    }
+     @media screen and (max-width: 480px){
+       margin: 10px 0 0 0;
+     }
   }
-  &--error{
-    border-bottom: 2px solid #ED3C56;
-  }
-  }
-   &__error{
-    color: #ED3C56;
+  &__error {
+    color: #ed3c56;
   }
 
   &__input-group {
@@ -157,65 +170,68 @@
     }
   }
 
- &__checkbox {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #A9ACAC;
-  margin-top: 24px;
-  cursor: pointer;
-
-  input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  span {
-    position: relative;
-    padding-left:35px;
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #a9acac;
+    margin-top: 24px;
     cursor: pointer;
+     @media screen and (max-width: 480px){
+       font-size: 12px;
+     }
 
-    &::before {
-      content: "";
+    input[type="checkbox"] {
       position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 24px;
-      height: 24px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      background-color: transparent;
-      border-radius: 50%;
-      transition: all 0.2s ease;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 5px;
-      width: 10px;
-      height: 8px;
-      border: solid #27EC98;
-      border-width: 0 0 2px 2px;
-      transform: rotate(-45deg);
       opacity: 0;
-      transition: all 0.2s ease;
+      width: 0;
+      height: 0;
+    }
+
+    span {
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        background-color: transparent;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 5px;
+        width: 10px;
+        height: 8px;
+        border: solid #27ec98;
+        border-width: 0 0 2px 2px;
+        transform: rotate(-45deg);
+        opacity: 0;
+        transition: all 0.2s ease;
+      }
+    }
+
+    input[type="checkbox"]:checked + span::after {
+      opacity: 1;
     }
   }
-
-  input[type="checkbox"]:checked + span::after {
-    opacity: 1;
-  }
-}
 
   &__submit {
     width: 100%;
-     padding: 17px 24px;
-     margin-top: 24px;
+    padding: 17px 24px;
+    margin-top: 24px;
   }
 
   &__divider {
@@ -224,10 +240,12 @@
     justify-content: center;
     color: #fff;
     margin: 32px 0;
-
+     @media screen and (max-width: 480px){
+       margin: 20px 0;
+     }
     &::before,
     &::after {
-      content: '';
+      content: "";
       flex: 1;
       height: 1px;
       background: #333;
@@ -246,7 +264,7 @@
 
   &__login-link {
     margin-top: 32px;
-    color: #A9ACAC;
+    color: #a9acac;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,51 +289,53 @@
 }
 
 .modal {
-    position: relative;
+  position: relative;
   background: #161818;
   padding: 32px;
   position: relative;
   text-align: center;
   max-width: 510px;
   width: 100%;
-   &::before,
+  border: 2px solid rgba(255, 255, 255, 0.1);
+   @media screen and (max-width: 480px){
+       max-width: 335px;
+     }
+  &::before,
   &::after,
   .corner-top-right,
   .corner-bottom-left {
-    content: '';
+    content: "";
     position: absolute;
     width: 24px;
     height: 24px;
-    border: 2px solid #27EC98;
-    
+    border: 2px solid #27ec98;
   }
   &::before {
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
     border-right: none;
     border-bottom: none;
   }
 
   &::after {
-    bottom: 0;
-    right: 0;
+    bottom: -2px;
+    right: -2px;
     border-left: none;
     border-top: none;
   }
 
   .corner-top-right {
-    top: 0;
-    right: 0;
+    top: -2px;
+    right: -2px;
     border-left: none;
     border-bottom: none;
   }
 
   .corner-bottom-left {
-    bottom: 0;
-    left: 0;
+    bottom: -2px;
+    left: -2px;
     border-top: none;
     border-right: none;
-    
   }
 }
 
@@ -332,26 +352,40 @@
 
 .modal__icon {
   margin-bottom: 24px;
+   @media screen and (max-width: 480px){
+       svg{
+        width: 60px;
+        height: 35px;
+       }
+     }
 }
 
-
 .modal__subtitle {
-  color: #A9ACAC;
+  color: #a9acac;
   margin: 16px 0;
+   @media screen and (max-width: 480px){
+       margin: 10px 0;
+     }
 }
 
 .modal__email {
   color: #fff;
-  
 }
 
 .modal__info {
   max-width: 445px;
   width: 100%;
   margin: 16px 0 32px 0;
+  color: #A9ACAC;
+  @media screen and (max-width: 480px){
+    margin: 10px 0 20px 0;
+       br{
+        display: none;
+       }
+     }
 }
 
 .modal__button {
-    width: 100%;
-    padding: 17px 24px;
+  width: 100%;
+  padding: 17px 24px;
 }

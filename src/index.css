@@ -110,7 +110,7 @@ body {
   position: relative;
   display: inline-block;
   text-align: center;
-  padding: 12px 24px;
+  padding: 17px 24px;
   border-radius: 100px;
   font-weight: 500;
   font-family: "Exo 2", sans-serif;
@@ -133,7 +133,7 @@ body {
 .button-2 {
   position: relative;
   display: inline-block;
-  padding: 12px 24px;
+  padding: 17px 24px;
   border-radius: 100px;
   font-weight: 500;
   font-family: "Exo 2", sans-serif;
@@ -155,6 +155,42 @@ body {
   overflow: hidden;
   
 }
+
+.button-red {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid transparent;
+  text-align: center;
+
+  background-image:  
+    radial-gradient(40.65% 118.75% at 50% 100%, rgba(242, 123, 140, 0.55) 0%, rgba(242, 123, 140, 0) 100%),
+    radial-gradient(27.75% 31.25% at 50% 100%, rgba(242, 123, 140, 0.68) 0%, rgba(242, 123, 140, 0) 100%),
+    linear-gradient(#ED3C56, #ED3C56),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.72) inset;
+
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
 
 .button-2::before {
   content: "";
@@ -207,6 +243,12 @@ body {
     }
     .heading.h5{
       font-size: 18px;
+    }
+    .heading.h3{
+      font-size: 30px;
+    }
+    .heading.h4{
+      font-size: 28px;
     }
    }
 .no-scroll {

@@ -11,12 +11,20 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-  if (menuOpen) {
-    document.body.classList.add('no-scroll');
-  } else {
-    document.body.classList.remove('no-scroll');
-  }
+  const handleClickOutside = (event) => {
+    if (
+      menuOpen &&
+      !event.target.closest(".header__menu-wrap") &&
+      !event.target.closest(".header__burger")
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  document.addEventListener("click", handleClickOutside);
+  return () => document.removeEventListener("click", handleClickOutside);
 }, [menuOpen]);
+
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -31,7 +39,7 @@ function Header() {
             </Link>
           </div>
           <div className={`header__menu-wrap ${menuOpen ? "active-menu" : ""}`}>
-            <Naviagtion />
+            <Naviagtion closeMenu={() => setMenuOpen(false)} />
             <div className="header__btns">
               {isLoggedIn ? (
                 <CustomButton

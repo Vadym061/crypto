@@ -16,12 +16,12 @@ const navigate = useNavigate();
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
   const newErrors = {};
 
   if (!email.trim()) {
-    newErrors.email = "Error text";
+    newErrors.email = "Email is required";
   } else if (!email.includes("@") || !email.includes(".")) {
     newErrors.email = "Email must contain @ and a dot";
   } else if (!emailRegex.test(email)) {
@@ -37,10 +37,17 @@ const navigate = useNavigate();
     return;
   }
 
-  setErrors({});
-  login();
-    navigate("/");
+  // Фейковий користувач
+  const fakeUser = {
+    email: email.trim(),
+    registeredAt: "22.05.2025",
+    status: "active",
+  };
+
+  login(fakeUser); 
+  navigate("/");
 };
+
 
 
   return (

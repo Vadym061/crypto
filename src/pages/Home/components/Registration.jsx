@@ -16,34 +16,33 @@ function Registration() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-  const newErrors = {};
+    e.preventDefault();
+    const newErrors = {};
 
-  if (!email.trim()) {
-    newErrors.email = "Email is required";
-  } else if (!email.includes("@") || !email.includes(".")) {
-    newErrors.email = "Email must contain @ and a dot";
-  } else if (!emailRegex.test(email)) {
-    newErrors.email = "Invalid email format";
-  }
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!email.includes("@") || !email.includes(".")) {
+      newErrors.email = "Email must contain @ and a dot";
+    } else if (!emailRegex.test(email)) {
+      newErrors.email = "Invalid email format";
+    }
 
-  if (!password.trim()) {
-    newErrors.password = "Password is required";
-  }
+    if (!password.trim()) {
+      newErrors.password = "Password is required";
+    }
 
-  if (!acceptedTerms) {
-    newErrors.terms = "You must accept the terms";
-  }
+    if (!acceptedTerms) {
+      newErrors.terms = "You must accept the terms";
+    }
 
-  if (Object.keys(newErrors).length > 0) {
-    setErrors(newErrors);
-    return;
-  }
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
 
-  setErrors({});
-  setIsModalOpen(true);
-};
-
+    setErrors({});
+    setIsModalOpen(true);
+  };
 
   return (
     <main className="main">
@@ -52,30 +51,38 @@ function Registration() {
           <form className="registration__form" onSubmit={handleSubmit}>
             <div className="corner-top-right"></div>
             <div className="corner-bottom-left"></div>
-            <h2 className="registration__title heading h3">Create an account</h2>
+            <h2 className="registration__title heading h3">
+              Create an account
+            </h2>
             <p className="registration__subtitle">Register to start trading</p>
 
             <input
               type="email"
               placeholder="E-mail"
-              className={`registration__input ${errors.email ? 'registration__input--error' : ''}`}
+              className={`registration__input ${
+                errors.email ? "registration__input--error" : ""
+              }`}
               value={email}
               onChange={(e) => {
-    const val = e.target.value;
-    setEmail(val);
+                const val = e.target.value;
+                setEmail(val);
 
-    if (errors.email && emailRegex.test(val)) {
-      setErrors((prev) => ({ ...prev, email: null }));
-    }
-  }}
+                if (errors.email && emailRegex.test(val)) {
+                  setErrors((prev) => ({ ...prev, email: null }));
+                }
+              }}
             />
-            {errors.email && <p className="registration__error">{errors.email}</p>}
+            {errors.email && (
+              <p className="registration__error">{errors.email}</p>
+            )}
 
             <div className="registration__input-group">
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                 className={`registration__input ${errors.email ? 'registration__input--error' : ''}`}
+                className={`registration__input ${
+                  errors.email ? "registration__input--error" : ""
+                }`}
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -92,7 +99,9 @@ function Registration() {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
-            {errors.password && <p className="registration__error">{errors.password}</p>}
+            {errors.password && (
+              <p className="registration__error">{errors.password}</p>
+            )}
 
             <label className="registration__checkbox">
               <input
@@ -108,7 +117,9 @@ function Registration() {
               />
               <span>I agree to the terms of use and privacy policy</span>
             </label>
-            {errors.terms && <p className="registration__error">{errors.terms}</p>}
+            {errors.terms && (
+              <p className="registration__error">{errors.terms}</p>
+            )}
 
             <CustomButton
               type="submit"

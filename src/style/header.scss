@@ -2,7 +2,10 @@
   padding-inline: clamp(10px, 5vw, 80px);
   position: relative;
   z-index: 5;
-  overflow: hidden;
+  @media screen and (max-width: 480px) {
+      overflow: hidden;
+  }
+
  
   @media screen and (max-width: 480px) {
     padding: 0;
