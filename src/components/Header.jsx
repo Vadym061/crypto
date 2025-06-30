@@ -21,8 +21,16 @@ function Header() {
     }
   };
 
-  document.addEventListener("click", handleClickOutside);
-  return () => document.removeEventListener("click", handleClickOutside);
+  if (menuOpen) {
+    document.body.classList.add("no-scroll");
+  } else {
+    document.body.classList.remove("no-scroll");
+  }
+
+  return () => {
+    document.removeEventListener("click", handleClickOutside);
+    document.body.classList.remove("no-scroll"); 
+  };
 }, [menuOpen]);
 
 

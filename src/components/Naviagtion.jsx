@@ -7,10 +7,14 @@ function Navigation({ closeMenu }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+   const handleSubmenuClick = () => {
+    setIsDropdownOpen(false);
+    closeMenu(); 
+  };
 
   return (
     <nav className="menu">
-      <Link to="/spot-trading" className="menu__item" onClick={closeMenu}>
+      <Link to="/trading" className="menu__item" onClick={closeMenu}>
         Spot Trading
       </Link>
 
@@ -41,10 +45,10 @@ function Navigation({ closeMenu }) {
                 isDropdownOpen ? "active-submenu" : ""
               }`}
             >
-              <Link to="/account" className="menu__submenu-item" onClick={closeMenu}>
+              <Link to="/account" className="menu__submenu-item" onClick={handleSubmenuClick}>
                 Account information
               </Link>
-              <Link to="/account/wallet" className="menu__submenu-item" onClick={closeMenu}>
+              <Link to="/account/wallet" className="menu__submenu-item" onClick={handleSubmenuClick}>
                 Wallet
               </Link>
             </div>
