@@ -49,9 +49,15 @@ const TradingPage = () => {
           <section className="trading-page__order-book card">
             <h2 className="card__title">Order Book</h2>
             <div className="order-book__list">
+              <div>
+                <p>Price</p>
+                <p>Amount</p>
+                <p>total</p>
+              </div>
               <div className="order-book__row order-book__row--sell">
                 <span className="order-book__price">2.3235</span>
-                <span className="order-book__amount">10.7K</span>
+                <span className="order-book__amount">12.39K</span>
+                <span >28.90K</span>
               </div>
               <div className="order-book__row order-book__row--buy">
                 <span className="order-book__price">2.3218</span>

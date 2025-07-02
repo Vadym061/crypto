@@ -4,12 +4,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh;
+  height: auto;
   padding-top: 96px;
+  padding-bottom: 40px;
   @media screen and (max-width: 480px) {
     padding-top: 40px;
     height: 100%;
-    padding-bottom: 40px;
   }
   &__container {
     display: flex;
@@ -29,10 +29,6 @@
     width: 100%;
     border-collapse: collapse;
     min-width: 800px;
-  }
-  &__table {
-    width: 100%;
-    border-collapse: collapse;
   }
 
   &__cell {
@@ -130,6 +126,7 @@
   width: 100%;
   display: flex;
   gap: 40px;
+  padding: 32px 0 0 0;
   flex-direction: column;
   @media screen and (max-width: 480px) {
     gap: 16px;
@@ -182,6 +179,7 @@
 
     @media (max-width: 480px) {
       -webkit-overflow-scrolling: touch;
+      padding: 0 16px;
     }
   }
 }
@@ -348,4 +346,187 @@
   position: absolute;
   bottom: -25px;
   left: 0;
+}
+
+.wallet {
+  padding-top: 24px;
+  @media screen and (max-width: 480px) {
+    padding-top: 12px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    opacity: 0.5;
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+      padding-bottom: 18px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__account {
+    .profile-tabs__button {
+      &:first-child {
+        padding: 14px 0;
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 24px;
+    }
+  }
+  &__balance {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__actions {
+    display: flex;
+    gap: 8px;
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  &__custom-select {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    &.is-open {
+      border-bottom-color: #27ec98;
+
+      .wallet__arrow svg {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__selected {
+    padding: 14px 20px;
+    background-color: #232727;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__arrow {
+    width: 13px;
+    height: 8px;
+    pointer-events: none;
+    svg {
+      transition: transform 0.3s ease;
+      transform: translateY(-50%);
+      transform-origin: center;
+      display: block;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    background-color: #232727;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4px;
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+
+  &__option {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(39, 236, 152, 0.1);
+      color: #232727;
+      border-bottom-color: #27ec98;
+      color: #27ec98;
+    }
+
+    &.selected {
+      color: #ffffff;
+      font-weight: 400;
+    }
+  }
+  &__cell-header {
+    font-weight: 500;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    @media screen and (max-width: 480px) {
+      font-size: 14px;
+    }
+    padding: 25px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.6;
+    color: #fff;
+    font-weight: 400;
+  }
+  &__cell,
+  &__cell-btn {
+    padding: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    vertical-align: middle;
+  }
+  &__currency-wrapper {
+    display: flex;
+    gap: 12px;
+  }
+  &__table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+  &__table {
+    width: max-content;
+    border-collapse: collapse;
+    min-width: 100%;
+  }
+  &__row {
+    white-space: nowrap;
+  }
+  &__icon {
+    height: 50px;
+    width: 50px;
+  }
+  &__cell-btn-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: end;
+    justify-content: end;
+  }
+  &__cell-btn {
+    text-align: end;
+    max-width: 200px;
+    @media screen and (max-width: 480px) {
+      max-width: 400px;
+    }
+  }
+  &__balance-usd {
+    opacity: 0.6;
+  }
+  &__currency-name {
+    opacity: 0.6;
+  }
 }

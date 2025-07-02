@@ -48,7 +48,7 @@ function Navigation({ closeMenu }) {
               <Link to="/account" className="menu__submenu-item" onClick={handleSubmenuClick}>
                 Account information
               </Link>
-              <Link to="/account/wallet" className="menu__submenu-item" onClick={handleSubmenuClick}>
+              <Link to="/wallet" className="menu__submenu-item" onClick={handleSubmenuClick}>
                 Wallet
               </Link>
             </div>
