@@ -63,14 +63,14 @@ const coins = [
 export default function CryptoTables() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState("popular");
- const filteredCoins =
-  activeTab === "popular"
-    ? coins
-    : coins.filter((coin) => coin.change.startsWith("+"));
+  const filteredCoins =
+    activeTab === "popular"
+      ? coins
+      : coins.filter((coin) => coin.change.startsWith("+"));
 
-const visibleCoins = filteredCoins.filter((coin) =>
-  coin.fullName.toLowerCase().includes(searchTerm.toLowerCase())
-);
+  const visibleCoins = filteredCoins.filter((coin) =>
+    coin.fullName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <section className="crypto-table hightlightbox">
@@ -80,100 +80,101 @@ const visibleCoins = filteredCoins.filter((coin) =>
             Track trends, pick top coins
           </h2>
           <div className="crypto-table__search search--mobile">
-  <div className="search-input-wrapper">
-    <svg
-      className="search-icon"
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z"
-        fill="white"
-      />
-    </svg>
-    <input
-      type="text"
-      
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-    />
-  </div>
-</div>
+            <div className="search-input-wrapper">
+              <svg
+                className="search-icon"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z"
+                  fill="white"
+                />
+              </svg>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
 
           <div className="crypto-table__section">
             <div className="crypto-table__scroll">
-            <table className="crypto-table__table">
-              <thead className="">
-                <tr className="crypto-table__thead">
-                  <th className="crypto-table__coin">Coin</th>
-                  <th className="crypto-table__price">Price</th>
-                  <th className="crypto-table__trade">
-                    Trading history for 24 h.
-                  </th>
-                  <th className="crypto-table__change">Changes in 24 h.</th>
-                  <th>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.3333 15.5L9.08333 10.25C8.66667 10.5833 8.1875 10.8472 7.64583 11.0417C7.10417 11.2361 6.52778 11.3333 5.91667 11.3333C4.40278 11.3333 3.12153 10.809 2.07292 9.76042C1.02431 8.71181 0.5 7.43056 0.5 5.91667C0.5 4.40278 1.02431 3.12153 2.07292 2.07292C3.12153 1.02431 4.40278 0.5 5.91667 0.5C7.43056 0.5 8.71181 1.02431 9.76042 2.07292C10.809 3.12153 11.3333 4.40278 11.3333 5.91667C11.3333 6.52778 11.2361 7.10417 11.0417 7.64583C10.8472 8.1875 10.5833 8.66667 10.25 9.08333L15.5 14.3333L14.3333 15.5ZM5.91667 9.66667C6.95833 9.66667 7.84375 9.30208 8.57292 8.57292C9.30208 7.84375 9.66667 6.95833 9.66667 5.91667C9.66667 4.875 9.30208 3.98958 8.57292 3.26042C7.84375 2.53125 6.95833 2.16667 5.91667 2.16667C4.875 2.16667 3.98958 2.53125 3.26042 3.26042C2.53125 3.98958 2.16667 4.875 2.16667 5.91667C2.16667 6.95833 2.53125 7.84375 3.26042 8.57292C3.98958 9.30208 4.875 9.66667 5.91667 9.66667Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {visibleCoins.map((coin, idx) => (
-                  <tr key={idx} className="crypto-table__row">
-                    <td className="crypto-table__column">
-                      <div className="crypto-table__icons">
-                        <img
-                          src={coin.icon}
-                          width={50}
-                          height={50}
-                          alt={coin.fullName}
-                          className="crypto-table__icon"
+              <table className="crypto-table__table">
+                <thead className="">
+                  <tr className="crypto-table__thead">
+                    <th className="crypto-table__coin">Coin</th>
+                    <th className="crypto-table__price">Price</th>
+                    <th className="crypto-table__trade">
+                      Trading history for 24 h.
+                    </th>
+                    <th className="crypto-table__change">Changes in 24 h.</th>
+                    <th>
+                    <button type="button">
+                  <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.3333 15.5L9.08333 10.25C8.66667 10.5833 8.1875 10.8472 7.64583 11.0417C7.10417 11.2361 6.52778 11.3333 5.91667 11.3333C4.40278 11.3333 3.12153 10.809 2.07292 9.76042C1.02431 8.71181 0.5 7.43056 0.5 5.91667C0.5 4.40278 1.02431 3.12153 2.07292 2.07292C3.12153 1.02431 4.40278 0.5 5.91667 0.5C7.43056 0.5 8.71181 1.02431 9.76042 2.07292C10.809 3.12153 11.3333 4.40278 11.3333 5.91667C11.3333 6.52778 11.2361 7.10417 11.0417 7.64583C10.8472 8.1875 10.5833 8.66667 10.25 9.08333L15.5 14.3333L14.3333 15.5ZM5.91667 9.66667C6.95833 9.66667 7.84375 9.30208 8.57292 8.57292C9.30208 7.84375 9.66667 6.95833 9.66667 5.91667C9.66667 4.875 9.30208 3.98958 8.57292 3.26042C7.84375 2.53125 6.95833 2.16667 5.91667 2.16667C4.875 2.16667 3.98958 2.53125 3.26042 3.26042C2.53125 3.98958 2.16667 4.875 2.16667 5.91667C2.16667 6.95833 2.53125 7.84375 3.26042 8.57292C3.98958 9.30208 4.875 9.66667 5.91667 9.66667Z"
+                          fill="white"
                         />
-                      </div>
-                      <div className="crypto-table__names">
-                        <div className="crypto-table__short">{coin.name}</div>
-                        <div className="crypto-table__full">
-                          {coin.fullName}
-                        </div>
-                      </div>
-                    </td>
-                    <td className="">{coin.price}</td>
-                    <td className="">{coin.volume}</td>
-                    <td
-                      className={
-                        coin.change.startsWith("+")
-                          ? "crypto-table__change--positive"
-                          : "crypto-table__change--negative"
-                      }
-                    >
-                      {coin.change}
-                    </td>
-                    <td>
-                      <CustomButton
-                        text="Trade"
-                        className="crypto-table__trade button-1"
-                      ></CustomButton>
-                    </td>
+                      </svg>
+              
+                </button>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-            
-          </div>
-          <div className="crypto-table__tabs">
+                </thead>
+                <tbody>
+                  {visibleCoins.map((coin, idx) => (
+                    <tr key={idx} className="crypto-table__row">
+                      <td className="crypto-table__column">
+                        <div className="crypto-table__icons">
+                          <img
+                            src={coin.icon}
+                            width={50}
+                            height={50}
+                            alt={coin.fullName}
+                            className="crypto-table__icon"
+                          />
+                        </div>
+                        <div className="crypto-table__names">
+                          <div className="crypto-table__short">{coin.name}</div>
+                          <div className="crypto-table__full">
+                            {coin.fullName}
+                          </div>
+                        </div>
+                      </td>
+                      <td className="">{coin.price}</td>
+                      <td className="">{coin.volume}</td>
+                      <td
+                        className={
+                          coin.change.startsWith("+")
+                            ? "crypto-table__change--positive"
+                            : "crypto-table__change--negative"
+                        }
+                      >
+                        {coin.change}
+                      </td>
+                      <td>
+                        <CustomButton
+                          text="Trade"
+                          className="crypto-table__trade button-1"
+                        ></CustomButton>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="crypto-table__tabs">
               <div className="crypto-table__btns">
                 <button
                   className={`crypto-table__btn ${
