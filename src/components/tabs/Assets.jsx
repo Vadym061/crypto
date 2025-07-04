@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+import CustomButton from "../CustomButton";
+import TopUpModal from "../TopUpModal";
+import CryptoWithdraw from "../CryptoWithdraw";
 
 import Btc from "../../assets/btc.png";
 import Eth from "../../assets/eth.png";
@@ -7,7 +10,8 @@ import Group from "../../assets/Group.png";
 import Ltc from "../../assets/ltc.png";
 import Doge from "../../assets/doge.png";
 
-import CustomButton from "../CustomButton";
+
+
 const options = ["USDT", "BTC", "ETH"];
 const walletData = [
   {
@@ -77,6 +81,10 @@ function Assets() {
   const [selected, setSelected] = useState(options[0]);
   const ref = useRef(null);
 
+  const [isTopUpModalOpen, setTopUpModalOpen] = useState(false);
+  const [isCryptoWithdraw, setCryptoWithdraw] = useState(false);
+
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -142,12 +150,18 @@ function Assets() {
         <div className="wallet__actions">
           <CustomButton
             text="Deposit"
-            className="wallet__button wallet__button--green button-2"
+            className="wallet__button wallet__button--green button-2"  onClick={() => setTopUpModalOpen(true)}
           ></CustomButton>
+          {isTopUpModalOpen && (
+        <TopUpModal isOpen={isTopUpModalOpen} onClose={() => setTopUpModalOpen(false)} />
+      )}
           <CustomButton
             text="Withdrawal of funds"
-            className="wallet__button button-1"
+            className="wallet__button button-1" onClick={() => setCryptoWithdraw(true)}
           ></CustomButton>
+          {isCryptoWithdraw && (
+            <CryptoWithdraw isOpen={isCryptoWithdraw} onClose={()=>setCryptoWithdraw(false)} />
+          )}
         </div>
       </div>
 

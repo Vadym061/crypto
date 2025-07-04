@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-// Для прикладу — правильний старий пароль (в реальності треба перевіряти сервером)
+// Для прикладу — правильний старий пароль 
 const CORRECT_OLD_PASSWORD = "oldpassword123";
 
 export default function ChangePasswordModal({ isOpen, onClose }) {
